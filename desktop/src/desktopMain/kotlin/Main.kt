@@ -3,8 +3,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import info.javaway.spend_sense.SayHelloFromCommon
-import info.javaway.spend_sense.sayHello
+import com.iaroslav_beldin.spendsense.SayHelloFromCommon
+import com.iaroslav_beldin.spendsense.sayHello
 
 
 fun  main(){

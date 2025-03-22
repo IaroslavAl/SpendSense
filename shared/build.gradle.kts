@@ -1,11 +1,13 @@
 plugins {
-    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.multiplatform)
+    alias(libs.plugins.android.library)
 }
 
 kotlin {
     jvm()
+    androidTarget()
 
     sourceSets {
         commonMain {
@@ -23,4 +25,9 @@ kotlin {
             }
         }
     }
+}
+
+android {
+    namespace = findProperty("app.namespace").toString()
+    compileSdk = findProperty("android.compileSdk").toString().toInt()
 }

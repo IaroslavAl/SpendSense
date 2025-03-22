@@ -1,4 +1,4 @@
-package info.javaway.spend_sense
+package com.iaroslav_beldin.spendsense
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size

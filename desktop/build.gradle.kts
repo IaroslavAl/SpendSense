@@ -1,14 +1,14 @@
 plugins {
-    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.multiplatform)
 }
 
 kotlin {
     jvm("desktop")
 
     sourceSets {
-        val jvmMain = getByName("desktopMain") {
+        getByName("desktopMain") {
             dependencies {
                 implementation(project(":shared"))
             }
