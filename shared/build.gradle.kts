@@ -7,7 +7,18 @@ plugins {
 
 kotlin {
     jvm()
+
     androidTarget()
+
+    listOf(
+        iosArm64(),
+        iosX64(),
+        iosSimulatorArm64()
+    ).forEach {
+        it.binaries.framework {
+            baseName = "shared"
+        }
+    }
 
     sourceSets {
         commonMain {
@@ -23,6 +34,10 @@ kotlin {
             dependencies {
                 api(compose.desktop.currentOs)
             }
+        }
+
+        iosMain {
+
         }
     }
 }
