@@ -40,9 +40,17 @@ kotlin {
 
         }
     }
+
+    sourceSets.all {
+        languageSettings.optIn("kotlinx.cinterop.ExperimentalForeignApi")
+    }
 }
 
 android {
     namespace = findProperty("app.namespace").toString()
     compileSdk = findProperty("android.compileSdk").toString().toInt()
+
+    defaultConfig {
+        minSdk = findProperty("android.minSdk").toString().toInt()
+    }
 }

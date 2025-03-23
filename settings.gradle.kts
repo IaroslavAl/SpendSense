@@ -3,7 +3,7 @@ rootProject.name = "SpendSense"
 include(":shared")
 include(":desktop")
 include(":android")
-include(":iOSApp")
+include(":iosApp")
 
 dependencyResolutionManagement {
     repositories {

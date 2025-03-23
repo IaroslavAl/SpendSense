@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A39F768F2D8F11C800390DDD"
-               BuildableName = "iOSApp.app"
-               BlueprintName = "iOSApp"
-               ReferencedContainer = "container:iOSApp.xcodeproj">
+               BlueprintIdentifier = "A3C484FE2D902CBD00ABC545"
+               BuildableName = "iosApp.app"
+               BlueprintName = "iosApp"
+               ReferencedContainer = "container:iosApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A39F768F2D8F11C800390DDD"
-            BuildableName = "iOSApp.app"
-            BlueprintName = "iOSApp"
-            ReferencedContainer = "container:iOSApp.xcodeproj">
+            BlueprintIdentifier = "A3C484FE2D902CBD00ABC545"
+            BuildableName = "iosApp.app"
+            BlueprintName = "iosApp"
+            ReferencedContainer = "container:iosApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,10 +62,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A39F768F2D8F11C800390DDD"
-            BuildableName = "iOSApp.app"
-            BlueprintName = "iOSApp"
-            ReferencedContainer = "container:iOSApp.xcodeproj">
+            BlueprintIdentifier = "A3C484FE2D902CBD00ABC545"
+            BuildableName = "iosApp.app"
+            BlueprintName = "iosApp"
+            ReferencedContainer = "container:iosApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
