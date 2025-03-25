@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:label="SpendSense">
+        android:label="SpendSense"
+        android:theme="@style/AppTheme">
 
         <!-- This name is resolved to com.example.myapp.MainActivity
              based on the namespace property in the build.gradle file -->
