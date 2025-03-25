@@ -2,9 +2,11 @@ package com.iaroslav_beldin.spendsense.settings.compose
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,49 +26,48 @@ import com.iaroslav_beldin.spendsense.common.ui.LocalAppColors
 import com.iaroslav_beldin.spendsense.settings.SettingsViewModel
 
 @Composable
-fun SettingsScreen(
+fun BoxScope.SettingsScreen(
     viewModel: SettingsViewModel
 ) {
     val state by viewModel.state.collectAsState()
 
-    Box(
-        modifier = Modifier.fillMaxWidth(),
-        contentAlignment = Alignment.Center
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .align(Alignment.Center)
     ) {
-        Column {
-            Card(
-                modifier = Modifier.padding(16.dp),
-                backgroundColor = AppThemeProvider.colors.surface,
-                shape = RoundedCornerShape(16.dp)
-            ) {
-                Text(
-                    state.deviceInfo,
-                    color = AppThemeProvider.colors.onSurface,
-                    modifier = Modifier.padding(16.dp)
+        Card(
+            modifier = Modifier.padding(16.dp),
+            backgroundColor = AppThemeProvider.colors.surface,
+            shape = RoundedCornerShape(16.dp)
+        ) {
+            Text(
+                state.deviceInfo,
+                color = AppThemeProvider.colors.onSurface,
+                modifier = Modifier.padding(16.dp)
+            )
+        }
+        Row(
+            modifier = Modifier
+                .padding(16.dp)
+                .background(AppThemeProvider.colors.surface, RoundedCornerShape(16.dp))
+                .padding(16.dp)
+            ,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                "Dark theme",
+                modifier = Modifier.weight(1f),
+                color = AppThemeProvider.colors.onSurface
+            )
+            Checkbox(
+                state.themeIsDark,
+                onCheckedChange = { viewModel.switchTheme(it) },
+                colors = CheckboxDefaults.colors(
+                    checkedColor = AppThemeProvider.colors.accent,
+                    uncheckedColor = AppThemeProvider.colors.onSurface
                 )
-            }
-            Row(
-                modifier = Modifier
-                    .padding(16.dp)
-                    .background(AppThemeProvider.colors.surface, RoundedCornerShape(16.dp))
-                    .padding(16.dp)
-                ,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    "Dark theme",
-                    modifier = Modifier.weight(1f),
-                    color = AppThemeProvider.colors.onSurface
-                )
-                Checkbox(
-                    state.themeIsDark,
-                    onCheckedChange = { viewModel.switchTheme(it) },
-                    colors = CheckboxDefaults.colors(
-                        checkedColor = AppThemeProvider.colors.accent,
-                        uncheckedColor = AppThemeProvider.colors.onSurface
-                    )
-                )
-            }
+            )
         }
     }
 }

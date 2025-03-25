@@ -1,20 +1,26 @@
-package com.iaroslav_beldin.spendsense.root
+package com.iaroslav_beldin.spendsense.root.compose
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import com.iaroslav_beldin.spendsense.categories.CategoriesScreen
 import com.iaroslav_beldin.spendsense.common.ui.AppTheme
 import com.iaroslav_beldin.spendsense.common.ui.AppThemeProvider
+import com.iaroslav_beldin.spendsense.events.EventsScreen
+import com.iaroslav_beldin.spendsense.root.RootViewModel
+import com.iaroslav_beldin.spendsense.root.model.AppTab
 import com.iaroslav_beldin.spendsense.settings.compose.SettingsScreen
 import com.iaroslav_beldin.spendsense.settings.SettingsViewModel
 
 @Composable
 fun RootScreen(viewModel: RootViewModel) {
     val state by viewModel.state.collectAsState()
+
     AppTheme(
         themeIsDark = state.themeIsDark,
         appPrefs = state.appPrefs
@@ -24,7 +30,19 @@ fun RootScreen(viewModel: RootViewModel) {
                 .fillMaxSize()
                 .background(AppThemeProvider.colors.background)
         ) {
-            SettingsScreen(SettingsViewModel())
+            RootNavigation(state.selectedTab)
+            RootBottomBar(state.selectedTab) {
+                viewModel.handleClickOnTab(it)
+            }
         }
+    }
+}
+
+@Composable
+fun BoxScope.RootNavigation(selectedTab: AppTab) {
+    when(selectedTab) {
+        AppTab.Categories -> CategoriesScreen()
+        AppTab.Events -> EventsScreen()
+        AppTab.Settings -> SettingsScreen(SettingsViewModel())
     }
 }

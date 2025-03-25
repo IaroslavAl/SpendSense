@@ -3,7 +3,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import com.iaroslav_beldin.spendsense.root.RootScreen
+import com.iaroslav_beldin.spendsense.root.compose.RootScreen
 import com.iaroslav_beldin.spendsense.root.RootViewModel
 import com.iaroslav_beldin.spendsense.sayHello
 

@@ -13,19 +13,19 @@ data class AppColors(
 )
 
 val lightPalette = AppColors(
-    accent = Color(0xFFFFF59D),
-    surface = Color(0xFFD7FFEA),
-    onSurface = Color(0xFF001329),
-    background = Color(0xFF8DC2A6),
-    onBackground = Color(0xFF133050),
+    accent = Color(0xFF00BCD4),  // бирюзовый
+    surface = Color(0xFFE0F7FA),  // светлый голубой
+    onSurface = Color(0xFF006064),  // темный бирюзовый
+    background = Color(0xFFB2EBF2),  // пастельный голубой
+    onBackground = Color(0xFF00838F),  // средний бирюзовый
 )
 
 val darkPalette = AppColors(
-    accent = Color(0xFFAF9363),
-    surface = Color(0xFF060D16),
-    onSurface = Color(0xFFF6F6F6),
-    background = Color(0xFF0D1E31),
-    onBackground = Color(0xFF99A6B5),
+    accent = Color(0xFF4DD0E1),  // светлый бирюзовый
+    surface = Color(0xFF000F1A),  // очень темный синий
+    onSurface = Color(0xFFE0F7FA),  // светлый голубой
+    background = Color(0xFF001F29),  // темный сине-зеленый
+    onBackground = Color(0xFF80DEEA),  // пастельный бирюзовый
 )
 
 object AppThemeProvider {
