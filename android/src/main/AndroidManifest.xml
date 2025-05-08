@@ -4,10 +4,9 @@
 
     <application
         android:label="SpendSense"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".App">
 
-        <!-- This name is resolved to com.example.myapp.MainActivity
-             based on the namespace property in the build.gradle file -->
         <activity android:name=".RootActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

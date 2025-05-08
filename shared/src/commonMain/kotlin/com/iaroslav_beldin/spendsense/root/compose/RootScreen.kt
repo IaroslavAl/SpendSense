@@ -15,8 +15,8 @@ import com.iaroslav_beldin.spendsense.common.ui.AppThemeProvider
 import com.iaroslav_beldin.spendsense.events.EventsScreen
 import com.iaroslav_beldin.spendsense.root.RootViewModel
 import com.iaroslav_beldin.spendsense.root.model.AppTab
-import com.iaroslav_beldin.spendsense.settings.compose.SettingsScreen
 import com.iaroslav_beldin.spendsense.settings.SettingsViewModel
+import com.iaroslav_beldin.spendsense.settings.compose.SettingsScreen
 
 @Composable
 fun RootScreen(viewModel: RootViewModel) {
