@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.android.library)
+    alias(libs.plugins.moko.resources)
 }
 
 kotlin {
@@ -27,6 +28,8 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.ui)
                 implementation(compose.material)
+                api(libs.resources.core)
+                api(libs.resources.compose)
             }
         }
 
@@ -35,15 +38,15 @@ kotlin {
                 api(compose.desktop.currentOs)
             }
         }
-
-        iosMain {
-
-        }
     }
 
     sourceSets.all {
         languageSettings.optIn("kotlinx.cinterop.ExperimentalForeignApi")
     }
+}
+
+multiplatformResources {
+    resourcesPackage.set("com.iaroslav_beldin.spendsense")
 }
 
 android {

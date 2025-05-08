@@ -1,13 +1,10 @@
 package com.iaroslav_beldin.spendsense.settings.compose
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -20,10 +17,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.iaroslav_beldin.spendsense.common.ui.AppTheme
+import com.iaroslav_beldin.spendsense.MR
 import com.iaroslav_beldin.spendsense.common.ui.AppThemeProvider
-import com.iaroslav_beldin.spendsense.common.ui.LocalAppColors
 import com.iaroslav_beldin.spendsense.settings.SettingsViewModel
+import dev.icerock.moko.resources.compose.stringResource
 
 @Composable
 fun BoxScope.SettingsScreen(
@@ -56,7 +53,7 @@ fun BoxScope.SettingsScreen(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                "Dark theme",
+                stringResource(MR.strings.dark_theme),
                 modifier = Modifier.weight(1f),
                 color = AppThemeProvider.colors.onSurface
             )
