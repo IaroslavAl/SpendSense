@@ -17,22 +17,28 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "shared"
+            baseName = "Shared"
         }
     }
 
     sourceSets {
         commonMain {
             dependencies {
+                // Compose
                 implementation(compose.foundation)
                 implementation(compose.runtime)
                 implementation(compose.ui)
                 implementation(compose.material)
 
+                // Resources
                 api(libs.resources.core)
                 api(libs.resources.compose)
 
+                // Settings
                 implementation(libs.settings)
+
+                // DI
+                api(libs.koin.core)
             }
         }
 

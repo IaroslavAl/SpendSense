@@ -5,12 +5,14 @@ agp = "8.2.0"
 activityCompose = "1.8.0"
 moko-resources = "0.24.5"
 settings = "1.0.0"
+koin = "4.0.4"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 resources-core = { module = "dev.icerock.moko:resources", version.ref = "moko-resources" }
 resources-compose = { module = "dev.icerock.moko:resources-compose", version.ref = "moko-resources" }
 settings = { module = "com.russhwolf:multiplatform-settings", version.ref = "settings"}
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 
 [plugins]
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose" }

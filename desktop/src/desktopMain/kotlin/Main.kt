@@ -4,13 +4,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import com.iaroslav_beldin.spendsense.root.RootViewModel
+import com.iaroslav_beldin.spendsense.di.initKoin
 import com.iaroslav_beldin.spendsense.root.compose.RootScreen
-import com.iaroslav_beldin.spendsense.sayHello
 
-
-fun  main(){
-    sayHello()
+fun main(){
+    initKoin()
 
     application {
         val state = rememberWindowState().apply { size = DpSize(400.dp, 800.dp) }
@@ -18,7 +16,7 @@ fun  main(){
             state = state,
             title = "SpendSense"
         ) {
-            RootScreen(viewModel = RootViewModel())
+            RootScreen()
         }
     }
 }

@@ -2,14 +2,16 @@ package com.iaroslav_beldin.spendsense.root
 
 import com.iaroslav_beldin.spendsense.base.BaseViewModel
 import com.iaroslav_beldin.spendsense.root.model.AppTab
-import com.iaroslav_beldin.spendsense.root.model.RootContract.*
+import com.iaroslav_beldin.spendsense.root.model.RootContract.State
 import com.iaroslav_beldin.spendsense.storage.SettingsManager
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
-class RootViewModel: BaseViewModel<State, Nothing>() {
+class RootViewModel(
+    private val settingsManager: SettingsManager
+): BaseViewModel<State, Nothing>() {
     init {
-        SettingsManager.themeIsDarkFlow.onEach { isDark ->
+        settingsManager.themeIsDarkFlow.onEach { isDark ->
             updateState { copy(themeIsDark = isDark) }
         }.launchIn(viewModelScope)
     }
