@@ -1,5 +1,6 @@
 package com.iaroslav_beldin.spendsense.di
 
+import com.iaroslav_beldin.spendsense.common.ui.calendar.DatePickerViewModel
 import com.iaroslav_beldin.spendsense.platform.DeviceInfo
 import com.iaroslav_beldin.spendsense.root.RootViewModel
 import com.iaroslav_beldin.spendsense.settings.SettingsViewModel
@@ -22,5 +23,6 @@ object ViewModelsModule {
     val viewModels = module {
         single { RootViewModel(get()) }
         factory { SettingsViewModel(get(), get()) }
+        single { DatePickerViewModel() }
     }
 }
